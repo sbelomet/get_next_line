@@ -83,7 +83,16 @@ char	*ft_strjoin(char *s1, char *s2)
 		res[len_s1 + i] = s2[i];
 		i++;
 	}
+	if ((!res) || (*res == '\0')) 
+	{
+		free(res);
+		return (NULL);
+	}
 	res[len_s1 + i] = '\0';
+//	printf("bullshit land hiiiii\n");
+//	if (s1)
+//		free(s1);
+//	printf("res: |%s|\n", res);
 	return (res);
 }
 
