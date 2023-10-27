@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbelomet <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 14:12:12 by sbelomet          #+#    #+#             */
-/*   Updated: 2023/10/27 15:16:19 by sbelomet         ###   ########.fr       */
+/*   Created: 2023/10/27 14:20:53 by sbelomet          #+#    #+#             */
+/*   Updated: 2023/10/27 15:17:09 by sbelomet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*ft_calloc(int count, int size)
 {
@@ -93,16 +93,16 @@ char	*clean_stash(char *stash)
 
 char	*get_next_line(int fd)
 {
-	static char	*stash;
+	static char	*stash[10240];
 	char		*res;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
-	stash = read_to_break(stash, fd);
-	if (!stash)
+	stash[fd] = read_to_break(stash[fd], fd);
+	if (!stash[fd])
 		return (NULL);
-	res = get_linetobreak(stash);
-	stash = clean_stash(stash);
+	res = get_linetobreak(stash[fd]);
+	stash[fd] = clean_stash(stash[fd]);
 	return (res);
 }
 /*
