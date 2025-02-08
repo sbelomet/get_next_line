@@ -1,15 +1,15 @@
 # 📖 get_next_line 📖
 
-`en effet cest le get next line de 42 tu copie pas hein 😏`
+`the title says it all`
 
-### Resources utiles
+### Useful resources
 
-**📚 [`GITBOOK`](https://42-cursus.gitbook.io/guide/rank-01/get_next_line) 📚** - Gitbook pour get_next_line
+**📚 [`GITBOOK`](https://42-cursus.gitbook.io/guide/rank-01/get_next_line) 📚** - Gitbook for get_next_line
 
-**🧪 [`FRANCINETTE`](https://github.com/xicodomingues/francinette) 🧪** - Si la francinette elle passe, alors c'est nickel
+**🧪 [`FRANCINETTE`](https://github.com/xicodomingues/francinette) 🧪** - Testing
 
 ## 
 
-### Ce qu'il faut faire
+### What to do
 
-Une fonction à laquelle on done un file descriptor, et qui va lire et retouner la prochaine ligne de contenu (jusqu'à `\n` ou la fin du fichier)
+The function should take in a file descriptor, open it and read up until a newline or EOF. It then returns the line that was found.
